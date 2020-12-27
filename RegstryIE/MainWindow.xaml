@@ -1,0 +1,18 @@
+﻿<Window x:Class="RegstryIE.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:cs="clr-namespace:System;assembly=mscorlib"
+        Title="RegistryIE" Height="89" Width="359" ResizeMode="NoResize">
+    <Grid>
+        <Label x:Name="label" Content="您的IE版本:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" />
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="117,10,0,0" VerticalAlignment="Top" Width="123">
+            <cs:String>IE11</cs:String>
+            <cs:String>IE10</cs:String>
+            <cs:String>IE9</cs:String>
+            <cs:String>IE8</cs:String>
+            <cs:String>IE6/7</cs:String>
+        </ComboBox>
+        <Button x:Name="button" Content="修改" HorizontalAlignment="Left" Margin="260,10,0,0" VerticalAlignment="Top"
+                Width="75" Click="button_Click" />
+
+    </Grid>
+</Window>

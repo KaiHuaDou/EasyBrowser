@@ -1,0 +1,80 @@
+﻿<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="clr-namespace:极简浏览器"
+        x:Class="极简浏览器.MainWindow" Title="极简浏览器" SizeChanged="sizechange" Width="600" WindowStartupLocation="Manual"
+        WindowState="Normal" Loaded="Window_Loaded" Icon="favicon.ico" Unloaded="Window_Unloaded" Height="500">
+    <Window.Resources>
+        <ControlTemplate x:Key="FilletTextBox" TargetType="{x:Type TextBox}">
+            <Border BorderBrush="Black" BorderThickness="1" CornerRadius="10">
+                <ScrollViewer x:Name="PART_ContentHost" VerticalAlignment="Center" />
+            </Border>
+        </ControlTemplate>
+    </Window.Resources>
+    <Window.TaskbarItemInfo>
+        <TaskbarItemInfo/>
+    </Window.TaskbarItemInfo>
+    <Grid x:Name="grid">
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text=""
+                VerticalAlignment="Top" FontSize="20" Width="455" Margin="70,0,0,0" Background="White" KeyDown="Go"
+                Template="{StaticResource FilletTextBox}">
+        </TextBox>
+        <WebBrowser x:Name="wb" HorizontalAlignment="Left" Margin="0,30,0,35" VerticalAlignment="Top" Navigated="Check"
+                Navigating="Running">
+            <WebBrowser.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="上一页(_P)" Click="button1_Click" />
+                    <MenuItem Header="下一页(_N)" Click="button_Click" />
+                    <MenuItem Header="刷新(_R)" Click="button3_Click" />
+                    <MenuItem Header="添加新页面(_W)" Click="button5_Click" />
+                    <MenuItem Header="查看网页源代码(_U)" Click="MenuItem_Click_6" />
+                    <MenuItem Header="设为书签(_B)" Click="MenuItem_Click_12" />
+                    <MenuItem Header="查看书签(_V)" Click="MenuItem_Click_11" />
+                    <MenuItem Header="历史记录(_H)" Click="MenuItem_Click_10" />
+                    <MenuItem Header="设置(_S)" Click="MenuItem_Click_9" />
+                    <MenuItem Header="帮助(_H)" Click="MenuItem_Click_4" />
+                    <MenuItem Header="关于(_A)" Click="MenuItem_Click_5" />
+                </ContextMenu>
+            </WebBrowser.ContextMenu>
+        </WebBrowser>
+        <Button x:Name="button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="35" Height="30"
+                Click="button_Click" Foreground="Black" FontWeight="ExtraBlack" Background="{x:Null}"
+                BorderBrush="{x:Null}" FontSize="24" FocusVisualStyle="{x:Null}" BorderThickness="0">
+            <Image Source="resource\向前.png"></Image>
+        </Button>
+        <Button x:Name="button1" HorizontalAlignment="Left" Margin="35,0,0,0" VerticalAlignment="Top" Width="35"
+                Height="30" Click="button1_Click" Foreground="Black" BorderBrush="{x:Null}" FontSize="24"
+                BorderThickness="0" FocusVisualStyle="{x:Null}" Background="{x:Null}">
+            <Image Source="resource\向后.png"></Image>
+        </Button>
+        <Button x:Name="button3" HorizontalAlignment="Right" Margin="0,0,36,0" VerticalAlignment="Top" Width="31"
+                Height="30" Click="button3_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Background="{x:Null}"
+                FocusVisualStyle="{Binding ElementName=button3,Path=Style}" BorderThickness="0">
+            <Image x:Name="image" Height="30" Width="30" Source="resource\刷新.png" />
+        </Button>
+        <StatusBar x:Name="startusBar" Height="35" Margin="0,0,72,0" VerticalAlignment="Bottom">
+            <Label x:Name="label1" Content="" Height="35" />
+            <ProgressBar x:Name="pb" Height="25" Width="200" Maximum="100" />
+        </StatusBar>
+        <Button x:Name="button5" HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Top" Width="35"
+                FontSize="22" Height="30" Click="button5_Click" Background="{x:Null}" Foreground="{x:Null}"
+                BorderBrush="{x:Null}" FocusVisualStyle="{x:Null}" BorderThickness="0">
+            <Image x:Name="image1" Margin="0,0,0,0" Source="resource\添加.png" />
+        </Button>
+        <Menu x:Name="menu" HorizontalAlignment="Right" Height="35" Margin="0,0,0,0" VerticalAlignment="Bottom"
+                Width="72">
+            <MenuItem Header="更多..." Height="35" Width="72" BorderThickness="0" FontSize="22">
+                <MenuItem Header="上一页(_P)" HorizontalAlignment="Left" Width="263" FontSize="24" Click="button1_Click" />
+                <MenuItem Header="下一页(_N)" HorizontalAlignment="Left" Width="263" FontSize="24" Click="button_Click" />
+                <MenuItem Header="刷新(_R)" HorizontalAlignment="Left" Width="263" FontSize="24" Click="button3_Click" />
+                <MenuItem Header="添加新页面(_W)" HorizontalAlignment="Left" Width="263" FontSize="24" Click="button5_Click" />
+                <MenuItem Header="查看网页源代码(_U)" HorizontalAlignment="Left" Width="294" Margin="-1,0,-30,0" FontSize="24"
+                        Click="MenuItem_Click_6" />
+                <MenuItem Header="设为书签(_B)" HorizontalAlignment="Left" Width="263" Click="MenuItem_Click_12" />
+                <MenuItem Header="查看书签(_V)" HorizontalAlignment="Left" Width="263" Click="MenuItem_Click_11" />
+                <MenuItem Header="历史记录(_H)" HorizontalAlignment="Left" Width="263" Click="MenuItem_Click_10" />
+                <MenuItem Header="设置(_S)" HorizontalAlignment="Left" Width="263" FontSize="24" Click="MenuItem_Click_9" />
+                <MenuItem Header="帮助(_H)" HorizontalAlignment="Left" Width="263" FontSize="24" Click="MenuItem_Click_4" />
+                <MenuItem Header="关于(_A)" HorizontalAlignment="Left" Width="263" FontSize="24" Click="MenuItem_Click_5" />
+            </MenuItem>
+        </Menu>
+    </Grid>
+</Window>
