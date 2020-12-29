@@ -122,6 +122,13 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resource\Error.png" />
+    <Resource Include="resource\刷新.png" />
+    <Resource Include="resource\向前.png" />
+    <Resource Include="resource\向后.png" />
+    <Resource Include="resource\添加.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

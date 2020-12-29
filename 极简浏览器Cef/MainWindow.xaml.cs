@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
+﻿using System.Windows;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using CefSharp.Wpf;
 
 namespace 极简浏览器Cef
 {
@@ -20,9 +9,34 @@ namespace 极简浏览器Cef
     /// </summary>
     public partial class MainWindow : Window
     {
+        ChromiumWebBrowser cwb;
         public MainWindow( )
         {
             InitializeComponent( );
+            cwb = new ChromiumWebBrowser("https://ie.icoa.cn/");
+            BrowserGrid.Children.Add(cwb);
+        }
+
+        private void Go(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Return)
+                cwb.Address = textBox.Text;
+        }
+
+        private void GoBack(object sender, RoutedEventArgs e)
+        {
+            if(cwb.CanGoBack == true)
+            {
+                cwb.GetBrowser( ).GoBack( );
+            }
+        }
+
+        private void GoForward(object sender, RoutedEventArgs e)
+        {
+            if (cwb.CanGoForward == true)
+            {
+                cwb.GetBrowser( ).GoForward( );
+            }
         }
     }
 }
