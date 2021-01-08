@@ -8,9 +8,9 @@ namespace 极简浏览器.Api
 {
     public class BrowserCore
     {
-        void Navigate()
+        void Navigate(string url)
         {
-            
+            App.Program.mainwindow.wb.Navigate(url);
         }
     }
 }

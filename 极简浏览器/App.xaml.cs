@@ -18,7 +18,7 @@ namespace 极简浏览器
         public class Program
         {
             public static string InputArgu ="";
-
+            public static MainWindow mainwindow = new 极简浏览器.MainWindow( );
             public static string Isnew { get; private set; }
             ///<summary>
             ///应用程序的主入口点。
@@ -33,7 +33,6 @@ namespace 极简浏览器
                 }
                 try
                 {
-                    MainWindow mainwindow = new 极简浏览器.MainWindow( );
                      App app = new App( );
                      app.InitializeComponent( );
                      app.Run(mainwindow);

@@ -73,30 +73,30 @@ namespace 极简浏览器.Api
             }
             return list;
         }
-        bool Delete(string url, FileType fileType)
+        public static bool Delete(string url, FileType fileType)
         {
             try
             {
-				string AllText = new string();
+				string AllText = "";
 				if(fileType == FileType.History)
 				{
-					AllText = File.ReadToEnd(HistoryPath);
-                    AllText.remove(url);
+					AllText = File.ReadAllText(HistoryPath);
+                    AllText.Replace(AllText, "");
 				}
 				if(fileType == FileType.BookMark)
 				{
-                    AllText = File.ReadToEnd(BookMarkPath);
-                    AllText.remove(url);
-				}
+                    AllText = File.ReadAllText(BookMarkPath);
+                    AllText.Replace(AllText, "");
+                }
                 Clear(fileType);
                 Write(AllText, fileType);
 
             }
-            catch(Exception e)
+            catch(Exception)
             {
                 return false;
             }
-            return true
+            return true;
         }
     }
 }
