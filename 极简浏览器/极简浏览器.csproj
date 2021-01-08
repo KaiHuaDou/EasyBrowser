@@ -143,6 +143,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Api\BrowserCore.cs" />
     <Compile Include="Api\File_API.cs" />
     <Compile Include="Api\NewInstance.cs" />
     <Compile Include="BrowserExtensions.cs" />
@@ -218,6 +219,7 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="极简浏览器.xmind" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
