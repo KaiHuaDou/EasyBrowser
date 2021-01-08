@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Timers;
@@ -69,11 +68,11 @@ namespace 极简浏览器
             {
                 if (App.Program.InputArgu != "")
                 {
-                    wb.Navigate(App.Program.InputArgu);
+                    BrowserCore.Navigate(App.Program.InputArgu);
                 }
                 else if (Url != "" && Url != null && Url != ".")
                 {
-                    wb.Navigate(Url);
+                    BrowserCore.Navigate(Url);
                 }
                 else if (!(Isnew == "false"))
                 {
@@ -81,11 +80,11 @@ namespace 极简浏览器
                     if (PathStart == "")
                     {
                         File.WriteAllText(AppStartupPath + "\\DataBase\\Config.db", "about:blank");
-                        wb.Navigate("about:blank");
+                        BrowserCore.Navigate("about:blank");
                     }
                     else
                     {
-                        wb.Navigate(PathStart);
+                        BrowserCore.Navigate(PathStart);
 
                     }
                 }
@@ -116,7 +115,7 @@ namespace 极简浏览器
             string str = textBox.Text;
             if (str == "about:blank")
             {
-                wb.Navigate("about:blank");
+                BrowserCore.Navigate("about:blank");
                 return;
             }
             try
@@ -141,7 +140,7 @@ namespace 极简浏览器
                 //加载
                 try
                 {
-                    wb.Navigate(str);
+                    BrowserCore.Navigate(str);
                 }
                 catch (UriFormatException)
                 {
@@ -149,7 +148,7 @@ namespace 极简浏览器
                     {
                         try
                         {
-                            wb.Navigate("http://" + str);
+                            BrowserCore.Navigate("http://" + str);
                             textBox.Text = "http://" + str;
                         }
                         catch (Exception) { }
@@ -161,7 +160,8 @@ namespace 极简浏览器
             }
             catch (ArgumentOutOfRangeException)
             {
-                wb.Navigate("https://www.baidu.com/#ie=UTF-8&wd=" + textBox.Text);
+                Console.WriteLine("OMH");
+                BrowserCore.Navigate("https://www.baidu.com/#ie=UTF-8&wd=" + textBox.Text);
             }
         }
 
@@ -239,7 +239,7 @@ namespace 极简浏览器
 
         private void mi_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            wb.Navigate(((string) ((ListBox) sender).SelectedItem));
+            BrowserCore.Navigate(((string) ((ListBox) sender).SelectedItem));
         }
     }
 }
