@@ -3,9 +3,9 @@ using System.Windows;
 
 namespace 极简浏览器.Api
 {
-    public class BrowserCore
+    public static class BrowserCore
     {
-        void Navigate(string url)
+        public static void Navigate(string url)
         {
             foreach (Window window in Application.Current.Windows)
             {

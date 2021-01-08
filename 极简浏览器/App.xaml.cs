@@ -51,7 +51,7 @@ namespace 极简浏览器
                 MainWindow.TaskbarItemInfo.ProgressState = TaskbarItemProgressState.Error;
                 MainWindow.TaskbarItemInfo.Overlay = new BitmapImage(new Uri("pack://application:,,,/resource/Error.png"));
                 string AppStartupPath = Path.GetDirectoryName(Process.GetCurrentProcess( ).MainModule.FileName);
-                File.AppendAllText(AppStartupPath + "\\logs\\" +
+                string LogPath = AppStartupPath + @"\logs\" +
                         DateTime.Now.Year.ToString( ) +
                         DateTime.Now.Month.ToString( ) +
                         DateTime.Now.Day.ToString( ) +
@@ -59,7 +59,9 @@ namespace 极简浏览器
                         DateTime.Now.Minute.ToString( ) +
                         DateTime.Now.Second.ToString( ) +
                         DateTime.Now.Millisecond.ToString( ) +
-                        ".log",
+                        ".log";
+                File.Create(LogPath);
+                File.AppendAllText(LogPath ,
                     e.Exception.Message + "\n" + e.Exception.Source + "\n"
                     + e.Exception.TargetSite + "\n" + e.Exception.HelpLink);
                 //MessageBox
