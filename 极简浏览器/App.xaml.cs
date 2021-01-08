@@ -33,9 +33,10 @@ namespace 极简浏览器
                 }
                 try
                 {
+                    MainWindow mainwindow = new 极简浏览器.MainWindow( );
                      App app = new App( );
                      app.InitializeComponent( );
-                     app.Run( );
+                     app.Run(mainwindow);
                 }
                 catch (XamlParseException e)
                 {

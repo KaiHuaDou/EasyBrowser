@@ -10,7 +10,7 @@ namespace 极简浏览器.Api
     {
         void Navigate()
         {
-            App.Current.MainWindow.PreviewTouchMove;
+            
         }
     }
 }
