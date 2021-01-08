@@ -23,7 +23,7 @@ namespace 极简浏览器Cef
                 cwb.Address = textBox.Text;
         }
 
-        private void GoBack(object sender, RoutedEventArgs e)
+        private void cwbGoBack(object sender, RoutedEventArgs e)
         {
             if(cwb.CanGoBack == true)
             {
@@ -31,7 +31,7 @@ namespace 极简浏览器Cef
             }
         }
 
-        private void GoForward(object sender, RoutedEventArgs e)
+        private void cwbGoForward(object sender, RoutedEventArgs e)
         {
             if (cwb.CanGoForward == true)
             {
@@ -39,7 +39,7 @@ namespace 极简浏览器Cef
             }
         }
 
-        private void Refresh(object sender, RoutedEventArgs e)
+        private void cwbRefresh(object sender, RoutedEventArgs e)
         {
             cwb.GetBrowser( ).Reload( );
         }

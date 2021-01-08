@@ -11,12 +11,12 @@
     </Window.Resources>
     <Grid x:Name="MainGrid">
         <Button x:Name="GoForward" HorizontalAlignment="Left" VerticalAlignment="Top" Width="35" Height="30"
-                Click="GoForward" Foreground="Black" FontWeight="ExtraBlack" Background="{x:Null}"
+                Click="cwbGoForward" Foreground="Black" FontWeight="ExtraBlack" Background="{x:Null}"
                 BorderBrush="{x:Null}" FontSize="24" FocusVisualStyle="{x:Null}" BorderThickness="0">
             <Image Source="resource\向前.png"></Image>
         </Button>
         <Button x:Name="GoBack" HorizontalAlignment="Left" Margin="35,0,0,0" VerticalAlignment="Top" Width="35"
-                Height="30" Click="GoBack" Foreground="Black" BorderBrush="{x:Null}" FontSize="24" BorderThickness="0"
+                Height="30" Click="cwbGoBack" Foreground="Black" BorderBrush="{x:Null}" FontSize="24" BorderThickness="0"
                 FocusVisualStyle="{x:Null}" Background="{x:Null}">
             <Image Source="resource\向后.png"></Image>
         </Button>
@@ -25,7 +25,7 @@
                 Template="{StaticResource FilletTextBox}" Margin="70,0,70,0"/>
         <Grid x:Name="BrowserGrid" Margin="0,35,0,0"></Grid>
         <Button x:Name="Refresh" HorizontalAlignment="Right" Margin="0,0,36,0" VerticalAlignment="Top" Width="31"
-                Height="30" Click="Refresh"  BorderBrush="{x:Null}" Foreground="{x:Null}" Background="{x:Null}"
+                Height="30" Click="cwbRefresh"  BorderBrush="{x:Null}" Foreground="{x:Null}" Background="{x:Null}"
                 FocusVisualStyle="{Binding ElementName=button3,Path=Style}" BorderThickness="0">
             <Image x:Name="image" Height="30" Width="30" Source="resource\刷新.png" />
         </Button>
