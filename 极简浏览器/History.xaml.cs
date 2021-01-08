@@ -104,8 +104,7 @@ namespace 极简浏览器
             {
                 if (!cb.IsChecked == true)
                 {
-                    lc.Add(cb);
-                    FileApi.Write(cb.Content + "\n", FileType.History);
+                    FileApi.Delete((string) cb.Content, FileType.History);
                 }
             }
             listBox1.ItemsSource = lc;

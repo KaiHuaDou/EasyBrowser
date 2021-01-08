@@ -81,12 +81,12 @@ namespace 极简浏览器.Api
 				if(fileType == FileType.History)
 				{
 					AllText = File.ReadAllText(HistoryPath);
-                    AllText.Replace(AllText, "");
+                    AllText.Replace(url, "");
 				}
 				if(fileType == FileType.BookMark)
 				{
                     AllText = File.ReadAllText(BookMarkPath);
-                    AllText.Replace(AllText, "");
+                    AllText.Replace(url, "");
                 }
                 Clear(fileType);
                 Write(AllText, fileType);
