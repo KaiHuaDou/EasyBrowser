@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using 极简浏览器;
+using System.Windows;
 
 namespace 极简浏览器.Api
 {
@@ -10,7 +7,13 @@ namespace 极简浏览器.Api
     {
         void Navigate(string url)
         {
-            App.Program.mainwindow.wb.Navigate(url);
+            foreach (Window window in Application.Current.Windows)
+            {
+                if(window is MainWindow)
+                {
+                    ((MainWindow) window).wb.Navigate(url);
+                }
+            }
         }
     }
 }
