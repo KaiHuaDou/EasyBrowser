@@ -38,5 +38,10 @@ namespace 极简浏览器Cef
                 cwb.GetBrowser( ).GoForward( );
             }
         }
+
+        private void Refresh(object sender, RoutedEventArgs e)
+        {
+            cwb.GetBrowser( ).Reload( );
+        }
     }
 }
