@@ -99,15 +99,18 @@ namespace 极简浏览器
 
         private void button2_b_Click(object sender, RoutedEventArgs e)
         {
-            List<CheckBox> lc = new List<CheckBox>( );
-            foreach (CheckBox cb in listBox1.Items)
+            FileApi.Clear(FileType.BookMark);
+            foreach(ListBoxItem lbi in listBox.Items)
             {
-                if (!cb.IsChecked == true)
+                if(((CheckBox)(lbi.Content)).IsChecked == true)
                 {
-                    FileApi.Delete((string) cb.Content, FileType.History);
+                    listBox.Items.Remove(lbi);
+                }
+                else
+                {
+                    FileApi.Write((string) (((CheckBox) (lbi.Content)).Content), FileType.BookMark);
                 }
             }
-            listBox1.ItemsSource = lc;
         }
     }
 }
