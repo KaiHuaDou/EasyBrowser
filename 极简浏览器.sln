@@ -10,6 +10,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{020BF091-13C3-4CCD-96FD-5537D2C5FBB1}"
 	ProjectSection(SolutionItems) = preProject
 		Performance1.psess = Performance1.psess
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "极简浏览器Cef", "极简浏览器Cef\极简浏览器Cef.csproj", "{C461B88A-2B92-4EEA-A10D-140FC4758D02}"
