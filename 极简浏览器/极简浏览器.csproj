@@ -219,6 +219,10 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="Setup\极简浏览器-cache\part1\FILES.7z" />
+    <None Include="Setup\极简浏览器-cache\part1\output-info.ini" />
+    <None Include="Setup\极简浏览器.aip" />
+    <None Include="Setup\极简浏览器.back.aip" />
     <None Include="极简浏览器.xmind" />
   </ItemGroup>
   <ItemGroup>
@@ -275,6 +279,10 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="resource\Error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Setup\Setup Files\极简浏览器.exe" />
+    <Resource Include="Setup\极简浏览器-cache\cacheIndex.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
