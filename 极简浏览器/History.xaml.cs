@@ -100,15 +100,15 @@ namespace 极简浏览器
         private void button2_b_Click(object sender, RoutedEventArgs e)
         {
             FileApi.Clear(FileType.BookMark);
-            foreach(ListBoxItem lbi in listBox.Items)
+            foreach(CheckBox cb in listBox.Items)
             {
-                if(((CheckBox)(lbi.Content)).IsChecked == true)
+                if(cb.IsChecked == true)
                 {
-                    listBox.Items.Remove(lbi);
+                    listBox.Items.Remove(cb);
                 }
                 else
                 {
-                    FileApi.Write((string) (((CheckBox) (lbi.Content)).Content), FileType.BookMark);
+                    FileApi.Write((string) (cb.Content), FileType.BookMark);
                 }
             }
         }
