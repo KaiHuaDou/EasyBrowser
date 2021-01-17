@@ -223,9 +223,19 @@ namespace 极简浏览器
         private void StatusBar_ContextMenu_Click(object sender, RoutedEventArgs e)
         {
             if (startusBar.Visibility == Visibility.Visible)
+            {
                 startusBar.Visibility = Visibility.Collapsed;
+                menu.Visibility = Visibility.Collapsed;
+                BrowserCore.GetInstance( ).wb.Margin = new Thickness(0, 30, 0, 0);
+                HidestartusBar.Header = "显示状态栏";
+            }
             else
+            {
                 startusBar.Visibility = Visibility.Visible;
+                menu.Visibility = Visibility.Visible;
+                BrowserCore.GetInstance( ).wb.Margin = new Thickness(0, 30, 0, 35);
+                HidestartusBar.Header = "隐藏状态栏";
+            }
         }
 
         private void Go(object sender, KeyEventArgs e)

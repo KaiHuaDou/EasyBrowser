@@ -10,14 +10,19 @@
         </ControlTemplate>
     </Window.Resources>
     <Window.TaskbarItemInfo>
-        <TaskbarItemInfo/>
+        <TaskbarItemInfo />
     </Window.TaskbarItemInfo>
     <Grid x:Name="grid">
+        <Grid.ContextMenu>
+            <ContextMenu>
+                <MenuItem x:Name="HidestartusBar" Header="隐藏状态栏" Click="StatusBar_ContextMenu_Click" />
+            </ContextMenu>
+        </Grid.ContextMenu>
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text=""
                 VerticalAlignment="Top" FontSize="20" Width="455" Margin="70,0,0,0" Background="White" KeyDown="Go"
                 Template="{StaticResource FilletTextBox}">
         </TextBox>
-        <WebBrowser x:Name="wb" HorizontalAlignment="Left" Margin="0,30,0,35" VerticalAlignment="Top" Navigated="Check"
+        <WebBrowser x:Name="wb" Margin="0,30,0,35" Navigated="Check"
                 Navigating="Running">
         </WebBrowser>
         <Button x:Name="button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="35" Height="30"
@@ -38,11 +43,6 @@
         <StatusBar x:Name="startusBar" Height="35" Margin="0,0,72,0" VerticalAlignment="Bottom">
             <Label x:Name="label1" Content="" Height="35" />
             <ProgressBar x:Name="pb" Height="25" Width="200" Maximum="100" />
-            <StatusBar.ContextMenu>
-                <ContextMenu>
-                    <MenuItem IsCheckable="True" Header="隐藏状态栏" Checked="StatusBar_ContextMenu_Click"/>
-                </ContextMenu>
-            </StatusBar.ContextMenu>
         </StatusBar>
         <Button x:Name="button5" HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Top" Width="35"
                 FontSize="22" Height="30" Click="button5_Click" Background="{x:Null}" Foreground="{x:Null}"
