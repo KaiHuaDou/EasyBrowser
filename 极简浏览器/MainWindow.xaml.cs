@@ -248,12 +248,7 @@ namespace 极简浏览器
 
         private void Window_Unloaded(object sender, RoutedEventArgs e)
         {
-            wb.Dispose( );
-        }
-
-        private void mi_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            BrowserCore.Navigate(((string) ((ListBox) sender).SelectedItem));
+            BrowserCore.GetInstance( ).wb.Dispose( );
         }
     }
 }
