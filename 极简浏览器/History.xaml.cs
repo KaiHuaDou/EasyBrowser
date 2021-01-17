@@ -56,7 +56,7 @@ namespace 极简浏览器
             listBox1.ItemsSource = FileApi.ReadAll(FileType.BookMark);
         }
 
-        private void button1_Click(object sender, RoutedEventArgs e)
+        private void HistoryClear(object sender, RoutedEventArgs e)
         {
             if(FileApi.Clear(FileType.History) != true)
             {
