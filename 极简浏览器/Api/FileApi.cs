@@ -50,9 +50,8 @@ namespace 极简浏览器.Api
         public static List<CheckBox> ReadAll(FileType fileType)
         {
             List<CheckBox> list = new List<CheckBox>( );
-            CheckBox[] checkBox = new CheckBox[1005];
-            int index = 0;
-            FileStream fs = new FileStream(HistoryPath, FileMode.OpenOrCreate, FileAccess.Read);
+            CheckBox checkBox = new CheckBox();
+            FileStream fs = null;
             if(fileType == FileType.History)
             {
                 fs = new FileStream(HistoryPath, FileMode.OpenOrCreate, FileAccess.Read);
@@ -62,41 +61,15 @@ namespace 极简浏览器.Api
                 fs = new FileStream(BookMarkPath, FileMode.OpenOrCreate, FileAccess.Read);
             }
             StreamReader sr = new StreamReader(fs);
-            string tmp_str;
             while (sr.EndOfStream != true)
             {
-                checkBox[index] = new CheckBox( );
-                tmp_str = sr.ReadLine( );
-                checkBox[index].Content = sr.ReadLine( );
-                list.Add(checkBox[index]);
-                index++; 
+                checkBox = new CheckBox( );
+                checkBox.Content = sr.ReadLine( );
+                if ((string)checkBox.Content == "")
+                    continue;
+                list.Add(checkBox);
             }
             return list;
-        }
-        public static bool Delete(string url, FileType fileType)
-        {
-            try
-            {
-				string AllText = "";
-				if(fileType == FileType.History)
-				{
-					AllText = File.ReadAllText(HistoryPath);
-                    AllText.Replace(url, "");
-				}
-				if(fileType == FileType.BookMark)
-				{
-                    AllText = File.ReadAllText(BookMarkPath);
-                    AllText.Replace(url, "");
-                }
-                Clear(fileType);
-                Write(AllText, fileType);
-
-            }
-            catch(Exception)
-            {
-                return false;
-            }
-            return true;
         }
     }
 }

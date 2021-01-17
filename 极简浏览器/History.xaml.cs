@@ -83,32 +83,34 @@ namespace 极简浏览器
             }
         }
 
-        private void button2_Click(object sender, RoutedEventArgs e)
+        private void HistoryDelsete(object sender, RoutedEventArgs e)
         {
-            List<CheckBox> lc = new List<CheckBox>( );
+            FileApi.Clear(FileType.History);
             foreach (CheckBox cb in listBox.Items)
             {
-                if (!cb.IsChecked == true)
-                {
-                    lc.Add(cb);
-                    FileApi.Write((string)cb.Content, FileType.History);
-                }
-            }
-            listBox.ItemsSource = lc;
-        }
-
-        private void button2_b_Click(object sender, RoutedEventArgs e)
-        {
-            FileApi.Clear(FileType.BookMark);
-            foreach(CheckBox cb in listBox.Items)
-            {
-                if(cb.IsChecked == true)
+                if (cb.IsChecked == true)
                 {
                     listBox.Items.Remove(cb);
                 }
                 else
                 {
-                    FileApi.Write((string) (cb.Content), FileType.BookMark);
+                    FileApi.Write((string) cb.Content, FileType.History);
+                }
+            }
+        }
+
+        private void BookMarkDelete(object sender, RoutedEventArgs e)
+        {
+            FileApi.Clear(FileType.BookMark);
+            foreach (CheckBox cb in listBox.Items)
+            {
+                if (cb.IsChecked == true)
+                {
+                    listBox.Items.Remove(cb);
+                }
+                else
+                {
+                    FileApi.Write((string) cb.Content, FileType.BookMark);
                 }
             }
         }
