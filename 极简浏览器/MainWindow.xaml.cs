@@ -177,10 +177,6 @@ namespace 极简浏览器
             {
                 this.Title = "新标签页 - 极简浏览器";
             }
-            else if(title == " " || title == "  ")
-            {
-                this.Title = wb.Source.ToString( );
-            }
             else
             {
                 this.Title = title + " - 极简浏览器";
@@ -222,6 +218,14 @@ namespace 极简浏览器
         private void button5_Click(object sender, RoutedEventArgs e)
         {
             NewInstance.StartNewInstance("about:blank");
+        }
+
+        private void StatusBar_ContextMenu_Click(object sender, RoutedEventArgs e)
+        {
+            if (startusBar.Visibility == Visibility.Visible)
+                startusBar.Visibility = Visibility.Collapsed;
+            else
+                startusBar.Visibility = Visibility.Visible;
         }
 
         private void Go(object sender, KeyEventArgs e)
