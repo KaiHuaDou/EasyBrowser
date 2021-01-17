@@ -22,9 +22,9 @@ namespace 极简浏览器.Api
             try
             {
                 if(fileType == FileType.History)
-                    File.AppendAllText(HistoryPath, url);
+                    File.AppendAllText(HistoryPath, url + '\n');
                 else
-                    File.AppendAllText(BookMarkPath, url);
+                    File.AppendAllText(BookMarkPath, url + '\n');
             }
             catch(Exception)
             {

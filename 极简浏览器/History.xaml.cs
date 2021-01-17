@@ -91,7 +91,7 @@ namespace 极简浏览器
                 if (!cb.IsChecked == true)
                 {
                     lc.Add(cb);
-                    FileApi.Write(cb.Content + "\n", FileType.History);
+                    FileApi.Write((string)cb.Content, FileType.History);
                 }
             }
             listBox.ItemsSource = lc;

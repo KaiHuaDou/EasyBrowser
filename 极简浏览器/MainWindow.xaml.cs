@@ -185,7 +185,7 @@ namespace 极简浏览器
             {
                 textBox.Text = wb.Source.ToString( );
                 string Data = textBox.Text + " " + this.Title.Replace(" - 极简浏览器", "") + " " + DateTime.Now.Date;
-                FileApi.Write(textBox.Text + "\n", FileType.History);
+                FileApi.Write(textBox.Text, FileType.History);
             }
             else
             {

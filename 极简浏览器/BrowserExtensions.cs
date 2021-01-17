@@ -76,7 +76,7 @@ namespace 极简浏览器
         }
         private void MenuItem_Click_12(object sender, RoutedEventArgs e)
         {
-            FileApi.Write(textBox.Text + '\n', FileType.BookMark);
+            FileApi.Write(textBox.Text, FileType.BookMark);
         }
 
         //GoBack GoForward Refresh 
