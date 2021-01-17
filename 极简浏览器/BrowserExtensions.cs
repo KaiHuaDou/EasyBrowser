@@ -82,18 +82,12 @@ namespace 极简浏览器
         //GoBack GoForward Refresh 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            if (wb.CanGoBack == true)
-            {
-                wb.GoBack( );
-            }
+            BrowserCore.GoBack( );
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            if (wb.CanGoForward == true)
-            {
-                wb.GoForward( );
-            }
+            BrowserCore.GoForward( );
         }
         private void button3_Click(object sender, RoutedEventArgs e)
         {
