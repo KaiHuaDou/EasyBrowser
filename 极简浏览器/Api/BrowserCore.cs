@@ -32,5 +32,11 @@ namespace 极简浏览器.Api
             if (GetInstance( ).wb.CanGoForward == true)
                 GetInstance( ).wb.GoForward( );
         }
+
+        public static void Refresh( )
+        {
+            try{ GetInstance( ).wb.Refresh( ); }
+            catch (System.Runtime.InteropServices.COMException) { }
+        }
     }
 }

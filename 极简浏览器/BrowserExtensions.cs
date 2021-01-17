@@ -91,11 +91,7 @@ namespace 极简浏览器
         }
         private void button3_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                wb.Refresh( );
-            }
-            catch (COMException) { }
+            BrowserCore.Refresh( );
         }
 
     }
