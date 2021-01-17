@@ -83,7 +83,7 @@ namespace 极简浏览器
             }
         }
 
-        private void HistoryDelsete(object sender, RoutedEventArgs e)
+        private void HistoryDelete(object sender, RoutedEventArgs e)
         {
             FileApi.Clear(FileType.History);
             foreach (CheckBox cb in listBox.Items)
