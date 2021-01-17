@@ -3,10 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="Version" Type="System.String" Scope="User">
-      <Value Profile="(Default)">2.13.3.5</Value>
+      <Value Profile="(Default)">2.15.4.3</Value>
     </Setting>
     <Setting Name="Type" Type="System.String" Scope="User">
-      <Value Profile="(Default)">WebPub</Value>
+      <Value Profile="(Default)">Beta</Value>
     </Setting>
     <Setting Name="Attach" Type="System.String" Scope="User">
       <Value Profile="(Default)">Preview</Value>
