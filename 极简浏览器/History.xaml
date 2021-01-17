@@ -10,10 +10,10 @@
                     <ListBox x:Name="listBox" Margin="0,0,0,40">
                     </ListBox>
                     <Button x:Name="button" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="30"
-                            Width="150" Content="在新标签页打开(_O)" Click="button_Click" Margin="10,0,0,5" />
+                            Width="167" Content="在新标签页打开(_O)" Click="button_Click" Margin="10,0,0,5" />
                     <Button x:Name="button1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="30"
                             Width="99" Content="清空(_C)" Click="HistoryClear" Margin="0,0,10,5" />
-                    <Button x:Name="button2" Content="删除(_D)" HorizontalAlignment="Left" Margin="177,0,0,5"
+                    <Button x:Name="button2" Content="删除(_D)" HorizontalAlignment="Left" Margin="182,0,0,5"
                             VerticalAlignment="Bottom" Width="100" Click="HistoryDelete" Height="30" />
                 </Grid>
             </TabItem>
@@ -21,10 +21,10 @@
                 <Grid>
                     <ListBox x:Name="listBox1" Margin="0,0,0,40" />
                     <Button x:Name="button_b" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="30"
-                            Width="150" Content="在新标签页打开(_O)" Click="button_Click1" Margin="10,0,0,5" />
+                            Width="167" Content="在新标签页打开(_O)" Click="button_Click1" Margin="10,0,0,5" />
                     <Button x:Name="button1_b" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="30"
-                            Width="71" Content="清空(_C)" Click="button1_Click1" Margin="0,0,10,5" />
-                    <Button x:Name="button2_b" Content="删除(_D)" HorizontalAlignment="Left" Margin="177,0,0,5"
+                            Width="99" Content="清空(_C)" Click="button1_Click1" Margin="0,0,10,5" />
+                    <Button x:Name="button2_b" Content="删除(_D)" HorizontalAlignment="Left" Margin="182,0,0,5"
                             VerticalAlignment="Bottom" Width="100" Click="BookMarkDelete" Height="30" />
                 </Grid>
             </TabItem>

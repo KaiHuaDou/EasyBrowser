@@ -85,17 +85,14 @@ namespace 极简浏览器
 
         private void HistoryDelete(object sender, RoutedEventArgs e)
         {
-            List<CheckBox> lc = (List<CheckBox>) listBox.ItemsSource;
+            List<CheckBox> lc = new List<CheckBox>( );
             FileApi.Clear(FileType.History);
             foreach (CheckBox cb in listBox.Items)
             {
                 if (cb.IsChecked == true)
                 {
-                    lc.Remove(cb);
-                }
-                else
-                {
                     FileApi.Write((string) cb.Content, FileType.History);
+                    lc.Add(cb);
                 }
             }
             listBox.ItemsSource = lc;
@@ -103,17 +100,14 @@ namespace 极简浏览器
 
         private void BookMarkDelete(object sender, RoutedEventArgs e)
         {
-            List<CheckBox> lc = (List<CheckBox>)listBox1.ItemsSource;
+            List<CheckBox> lc = new List<CheckBox>( );
             FileApi.Clear(FileType.BookMark);
             foreach (CheckBox cb in listBox1.Items)
             {
-                if (cb.IsChecked == true)
-                {
-                    lc.Remove(cb);
-                }
-                else
+                if (!cb.IsChecked == true)
                 {
                     FileApi.Write((string) cb.Content, FileType.BookMark);
+                    lc.Add(cb);
                 }
             }
             listBox1.ItemsSource = lc;
