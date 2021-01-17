@@ -19,21 +19,6 @@
         </TextBox>
         <WebBrowser x:Name="wb" HorizontalAlignment="Left" Margin="0,30,0,35" VerticalAlignment="Top" Navigated="Check"
                 Navigating="Running">
-            <WebBrowser.ContextMenu>
-                <ContextMenu>
-                    <MenuItem Header="上一页(_P)" Click="button1_Click" />
-                    <MenuItem Header="下一页(_N)" Click="button_Click" />
-                    <MenuItem Header="刷新(_R)" Click="button3_Click" />
-                    <MenuItem Header="添加新页面(_W)" Click="button5_Click" />
-                    <MenuItem Header="查看网页源代码(_U)" Click="MenuItem_Click_6" />
-                    <MenuItem Header="设为书签(_B)" Click="MenuItem_Click_12" />
-                    <MenuItem Header="查看书签(_V)" Click="MenuItem_Click_11" />
-                    <MenuItem Header="历史记录(_H)" Click="MenuItem_Click_10" />
-                    <MenuItem Header="设置(_S)" Click="MenuItem_Click_9" />
-                    <MenuItem Header="帮助(_H)" Click="MenuItem_Click_4" />
-                    <MenuItem Header="关于(_A)" Click="MenuItem_Click_5" />
-                </ContextMenu>
-            </WebBrowser.ContextMenu>
         </WebBrowser>
         <Button x:Name="button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="35" Height="30"
                 Click="button_Click" Foreground="Black" FontWeight="ExtraBlack" Background="{x:Null}"
@@ -53,6 +38,11 @@
         <StatusBar x:Name="startusBar" Height="35" Margin="0,0,72,0" VerticalAlignment="Bottom">
             <Label x:Name="label1" Content="" Height="35" />
             <ProgressBar x:Name="pb" Height="25" Width="200" Maximum="100" />
+            <StatusBar.ContextMenu>
+                <ContextMenu>
+                    <MenuItem IsCheckable="True" Header="隐藏状态栏" Checked="StatusBar_ContextMenu_Click"/>
+                </ContextMenu>
+            </StatusBar.ContextMenu>
         </StatusBar>
         <Button x:Name="button5" HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Top" Width="35"
                 FontSize="22" Height="30" Click="button5_Click" Background="{x:Null}" Foreground="{x:Null}"
