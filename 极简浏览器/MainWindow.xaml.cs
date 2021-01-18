@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Timers;
 using System.Windows;
+using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Media.Animation;
 using System.Windows.Navigation;
@@ -162,6 +163,13 @@ namespace 极简浏览器
                 Console.WriteLine("OMH");
                 BrowserCore.Navigate("https://www.baidu.com/#ie=UTF-8&wd=" + textBox.Text);
             }
+            pb.Visibility = Visibility.Visible;
+            Storyboard story = new Storyboard( );
+            DoubleAnimation da = new DoubleAnimation(0, 100, new Duration(TimeSpan.FromSeconds(10)));
+            Storyboard.SetTarget(da, pb);
+            Storyboard.SetTargetProperty(da, new PropertyPath("Value"));
+            story.Children.Add(da);
+            story.Begin( );
         }
 
 
@@ -206,12 +214,6 @@ namespace 极简浏览器
         private void Running(object sender, NavigatingCancelEventArgs e)
         {
             label1.Content = "正在加载中...";
-            Storyboard story = new Storyboard( );
-            DoubleAnimation da = new DoubleAnimation(0, 90, new Duration(TimeSpan.FromSeconds(20)));
-            Storyboard.SetTarget(da, pb);
-            Storyboard.SetTargetProperty(da, new PropertyPath("Value"));
-            story.Children.Add(da);
-            story.Begin( );
         }
 
         private void button5_Click(object sender, RoutedEventArgs e)
@@ -225,14 +227,14 @@ namespace 极简浏览器
             {
                 startusBar.Visibility = Visibility.Collapsed;
                 menu.Visibility = Visibility.Collapsed;
-                BrowserCore.GetInstance( ).wb.Margin = new Thickness(0, 30, 0, 0);
+                BrowserCore.GetInstance( ).wb.Margin = new Thickness(0, 37, 0, 0);
                 HidestartusBar.Header = "显示状态栏";
             }
             else
             {
                 startusBar.Visibility = Visibility.Visible;
                 menu.Visibility = Visibility.Visible;
-                BrowserCore.GetInstance( ).wb.Margin = new Thickness(0, 30, 0, 35);
+                BrowserCore.GetInstance( ).wb.Margin = new Thickness(0, 37, 0, 35);
                 HidestartusBar.Header = "隐藏状态栏";
             }
         }

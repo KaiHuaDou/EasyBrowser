@@ -22,8 +22,7 @@
                 VerticalAlignment="Top" FontSize="20" Width="455" Margin="70,0,0,0" Background="White" KeyDown="Go"
                 Template="{StaticResource FilletTextBox}">
         </TextBox>
-        <WebBrowser x:Name="wb" Margin="0,30,0,35" Navigated="Check"
-                Navigating="Running">
+        <WebBrowser x:Name="wb" Margin="0,37,0,35" Navigated="Check" Navigating="Running">
         </WebBrowser>
         <Button x:Name="button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="35" Height="30"
                 Click="button_Click" Foreground="Black" FontWeight="ExtraBlack" Background="{x:Null}"
@@ -42,7 +41,6 @@
         </Button>
         <StatusBar x:Name="startusBar" Height="35" Margin="0,0,72,0" VerticalAlignment="Bottom">
             <Label x:Name="label1" Content="" Height="35" />
-            <ProgressBar x:Name="pb" Height="25" Width="200" Maximum="100" />
         </StatusBar>
         <Button x:Name="button5" HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Top" Width="35"
                 FontSize="22" Height="30" Click="button5_Click" Background="{x:Null}" Foreground="{x:Null}"
@@ -66,5 +64,7 @@
                 <MenuItem Header="关于(_A)" HorizontalAlignment="Left" Width="263" FontSize="24" Click="MenuItem_Click_5" />
             </MenuItem>
         </Menu>
+        <ProgressBar x:Name="pb" Maximum="100" Margin="0,30,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Top"
+                Height="7" />
     </Grid>
 </Window>
