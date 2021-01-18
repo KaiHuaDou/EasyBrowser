@@ -251,5 +251,11 @@ namespace 极简浏览器
         {
             BrowserCore.GetInstance( ).wb.Dispose( );
         }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            AdvBrowser ab = new AdvBrowser( );
+            ab.Show( );
+        }
     }
 }

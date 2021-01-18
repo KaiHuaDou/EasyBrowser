@@ -62,6 +62,7 @@
                 <MenuItem Header="设置(_S)" HorizontalAlignment="Left" Width="263" FontSize="24" Click="MenuItem_Click_9" />
                 <MenuItem Header="帮助(_H)" HorizontalAlignment="Left" Width="263" FontSize="24" Click="MenuItem_Click_4" />
                 <MenuItem Header="关于(_A)" HorizontalAlignment="Left" Width="263" FontSize="24" Click="MenuItem_Click_5" />
+                <MenuItem Header="高级浏览(_V)" HorizontalAlignment="Left" Width="263" FontSize="24" Click="MenuItem_Click"/>
             </MenuItem>
         </Menu>
         <ProgressBar x:Name="pb" Maximum="100" Margin="0,30,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Top"
