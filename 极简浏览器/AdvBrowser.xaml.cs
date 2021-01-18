@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Input;
+using CefSharp;
 using CefSharp.Wpf;
 
 namespace 极简浏览器
@@ -16,7 +17,6 @@ namespace 极简浏览器
         {
             InitializeComponent( );
             cwb.Margin = new Thickness(0, 0, 0, 0);
-            cwb.TargetUpdated += Cwb_TargetUpdated;
             BrowserGrid.Children.Add(cwb);
         }
 
@@ -26,13 +26,7 @@ namespace 极简浏览器
             IsNew = false;
             InitializeComponent( );
             cwb.Margin = new Thickness(0, 0, 0, 0);
-            cwb.TargetUpdated += Cwb_TargetUpdated;
             BrowserGrid.Children.Add(cwb);
-        }
-        private void Cwb_TargetUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
-        {
-            e.Handled = true;
-            AdvBrowser ab = new AdvBrowser((string)e.TargetObject.GetValue(e.Property));
         }
 
         private void textBox_KeyDown(object sender, KeyEventArgs e)

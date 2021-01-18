@@ -3,7 +3,7 @@
         Loaded="Window_Loaded">
 <Grid>
         <TextBox x:Name="textBox" Height="35" TextWrapping="Wrap" VerticalAlignment="Top" Margin="70,0,60,0"
-                FontSize="24" KeyDown="textBox_KeyDown" />
+                FontSize="24" KeyDown="textBox_KeyDown" Text="{Binding ElementName=BrowserGrid,Path=cwb.Address}"/>
         <Button x:Name="button" Content="←" HorizontalAlignment="Left" VerticalAlignment="Top" Width="35" Height="35"
                 Click="button_Click" />
         <Button x:Name="button1" Content="→" HorizontalAlignment="Left" Margin="35,0,0,0" VerticalAlignment="Top"
