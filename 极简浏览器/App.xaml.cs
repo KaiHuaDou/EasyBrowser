@@ -13,7 +13,7 @@ namespace 极简浏览器
     /// </summary>
     public partial class App : System.Windows.Application
     {
-        string AppStartupPath = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
+        static string AppStartupPath = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
         JumpList jumplist = new JumpList( );
         public class Program
         {
@@ -34,6 +34,7 @@ namespace 极简浏览器
                 {
                      App app = new App( );
                      app.InitializeComponent( );
+                     RuntimeCheckAndAutoFix( );
                      app.Run( );
                 }
                 catch (XamlParseException e)
@@ -41,6 +42,20 @@ namespace 极简浏览器
                     System.Windows.MessageBox.Show(e.Message, "极简浏览器", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error, System.Windows.MessageBoxResult.OK, System.Windows.MessageBoxOptions.ServiceNotification);
                 }
             }
+        }
+
+        static void RuntimeCheckAndAutoFix( )
+        {
+            if (Directory.Exists(AppStartupPath + "\\DataBase") == false)
+                Directory.CreateDirectory(AppStartupPath + "\\DataBase");
+            if (Directory.Exists(AppStartupPath + "\\logs") == false)
+                Directory.CreateDirectory(AppStartupPath + "\\logs");
+            if (File.Exists(AppStartupPath + "\\DataBase\\History.db") == false)
+                File.Create(AppStartupPath + "\\DataBase\\History.db");
+            if (File.Exists(AppStartupPath + "\\DataBase\\BookMark.db") == false)
+                File.Create(AppStartupPath + "\\DataBase\\BookMark.db");
+            if (File.Exists(AppStartupPath + "\\logs\\log.log") == false)
+                File.Create(AppStartupPath + "\\logs\\log.log");
         }
 
         private void ExpetionOpen(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)

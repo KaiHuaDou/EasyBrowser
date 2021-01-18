@@ -48,7 +48,6 @@ namespace 极简浏览器
             //360BrowserKill
             timer.Elapsed += Timer_Elapsed;
         }
-
         private void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
             if (Process.GetProcessesByName("360se").Length != 0)
@@ -89,24 +88,9 @@ namespace 极简浏览器
                     }
                 }
             }
-            catch (UriFormatException ex)
-            {
-                //MessageBox.Show(App.Program.InputArgu);
-                File.AppendAllText(AppStartupPath + "\\logs\\" + 
-                    DateTime.Now.Year.ToString( ) +
-                    DateTime.Now.Month.ToString( ) +
-                    DateTime.Now.Day.ToString( ) +
-                    DateTime.Now.Hour.ToString( ) +
-                    DateTime.Now.Minute.ToString( ) +
-                    DateTime.Now.Second.ToString( ) +
-                    DateTime.Now.Millisecond.ToString( ) + 
-                    ".log",
-                    ex.Message + "\nSite:" + App.Program.InputArgu);
-                this.Close( );
-            }
             catch (Exception)
             {
-                ;
+                this.Close( );
             }
         }
 

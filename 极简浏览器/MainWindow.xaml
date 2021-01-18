@@ -66,6 +66,6 @@
             </MenuItem>
         </Menu>
         <ProgressBar x:Name="pb" Maximum="100" Margin="0,30,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Top"
-                Height="7" />
+                Height="7" Background="{x:Null}" BorderThickness="0" />
     </Grid>
 </Window>
