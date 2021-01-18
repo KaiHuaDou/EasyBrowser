@@ -54,6 +54,8 @@ namespace 极简浏览器
                 File.Create(AppStartupPath + "\\DataBase\\History.db");
             if (File.Exists(AppStartupPath + "\\DataBase\\BookMark.db") == false)
                 File.Create(AppStartupPath + "\\DataBase\\BookMark.db");
+            if (File.Exists(AppStartupPath + "\\DataBase\\Config.db") == false)
+                File.Create(AppStartupPath + "\\DataBase\\Config.db");
             if (File.Exists(AppStartupPath + "\\logs\\log.log") == false)
                 File.Create(AppStartupPath + "\\logs\\log.log");
         }
