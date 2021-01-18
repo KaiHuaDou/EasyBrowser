@@ -12,8 +12,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "极简浏览器Cef", "极简浏览器Cef\极简浏览器Cef.csproj", "{C461B88A-2B92-4EEA-A10D-140FC4758D02}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		2.0D|Any CPU = 2.0D|Any CPU
@@ -58,22 +56,6 @@ Global
 		{3CF1A38C-B113-4093-B353-35AC7E5A95B0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3CF1A38C-B113-4093-B353-35AC7E5A95B0}.Release|x64.ActiveCfg = Release|x64
 		{3CF1A38C-B113-4093-B353-35AC7E5A95B0}.Release|x64.Build.0 = Release|x64
-		{C461B88A-2B92-4EEA-A10D-140FC4758D02}.2.0D|Any CPU.ActiveCfg = Release|Any CPU
-		{C461B88A-2B92-4EEA-A10D-140FC4758D02}.2.0D|Any CPU.Build.0 = Release|Any CPU
-		{C461B88A-2B92-4EEA-A10D-140FC4758D02}.2.0D|x64.ActiveCfg = Release|x64
-		{C461B88A-2B92-4EEA-A10D-140FC4758D02}.2.0D|x64.Build.0 = Release|x64
-		{C461B88A-2B92-4EEA-A10D-140FC4758D02}.2.0R|Any CPU.ActiveCfg = Release|Any CPU
-		{C461B88A-2B92-4EEA-A10D-140FC4758D02}.2.0R|Any CPU.Build.0 = Release|Any CPU
-		{C461B88A-2B92-4EEA-A10D-140FC4758D02}.2.0R|x64.ActiveCfg = Release|x64
-		{C461B88A-2B92-4EEA-A10D-140FC4758D02}.2.0R|x64.Build.0 = Release|x64
-		{C461B88A-2B92-4EEA-A10D-140FC4758D02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C461B88A-2B92-4EEA-A10D-140FC4758D02}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C461B88A-2B92-4EEA-A10D-140FC4758D02}.Debug|x64.ActiveCfg = Debug|x64
-		{C461B88A-2B92-4EEA-A10D-140FC4758D02}.Debug|x64.Build.0 = Debug|x64
-		{C461B88A-2B92-4EEA-A10D-140FC4758D02}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C461B88A-2B92-4EEA-A10D-140FC4758D02}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C461B88A-2B92-4EEA-A10D-140FC4758D02}.Release|x64.ActiveCfg = Release|x64
-		{C461B88A-2B92-4EEA-A10D-140FC4758D02}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
