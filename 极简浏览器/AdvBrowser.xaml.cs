@@ -32,7 +32,7 @@ namespace 极简浏览器
         private void Cwb_TargetUpdated(object sender, System.Windows.Data.DataTransferEventArgs e)
         {
             e.Handled = true;
-            AdvBrowser ab = new AdvBrowser((string )e.TargetObject.GetValue(e.TargetObject.));
+            AdvBrowser ab = new AdvBrowser((string)e.TargetObject.GetValue(e.Property));
         }
 
         private void textBox_KeyDown(object sender, KeyEventArgs e)
@@ -69,7 +69,10 @@ namespace 极简浏览器
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
+            if(IsNew == false)
+            {
+                cwb.Address = Url;
+            }
         }
     }
 }
