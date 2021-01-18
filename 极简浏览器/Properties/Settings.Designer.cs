@@ -25,7 +25,7 @@ namespace 极简浏览器.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2.15.4.3")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2.16.3.2")]
         public string Version {
             get {
                 return ((string)(this["Version"]));

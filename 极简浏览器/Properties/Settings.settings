@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="Version" Type="System.String" Scope="User">
-      <Value Profile="(Default)">2.15.4.3</Value>
+      <Value Profile="(Default)">2.16.3.2</Value>
     </Setting>
     <Setting Name="Type" Type="System.String" Scope="User">
       <Value Profile="(Default)">Beta</Value>
