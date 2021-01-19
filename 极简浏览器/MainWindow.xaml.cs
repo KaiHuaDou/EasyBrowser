@@ -185,16 +185,6 @@ namespace 极简浏览器
 
         }
 
-        private void sizechange(object sender, SizeChangedEventArgs e)
-        {
-            if (this.Width - 155 > 0)
-            {
-                textBox.Width = this.ActualWidth - 155;
-                startusBar.Width = this.ActualWidth - 72;
-            }
-        }
-
-
         private void Running(object sender, NavigatingCancelEventArgs e)
         {
             label1.Content = "正在加载中...";
