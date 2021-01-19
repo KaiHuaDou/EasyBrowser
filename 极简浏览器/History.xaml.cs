@@ -89,7 +89,7 @@ namespace 极简浏览器
             FileApi.Clear(FileType.History);
             foreach (CheckBox cb in listBox.Items)
             {
-                if (cb.IsChecked == true)
+                if (cb.IsChecked != true)
                 {
                     FileApi.Write((string) cb.Content, FileType.History);
                     lc.Add(cb);
@@ -104,7 +104,7 @@ namespace 极简浏览器
             FileApi.Clear(FileType.BookMark);
             foreach (CheckBox cb in listBox1.Items)
             {
-                if (!cb.IsChecked == true)
+                if (!cb.IsChecked != true)
                 {
                     FileApi.Write((string) cb.Content, FileType.BookMark);
                     lc.Add(cb);
