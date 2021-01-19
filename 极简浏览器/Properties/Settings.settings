@@ -3,13 +3,13 @@
   <Profiles />
   <Settings>
     <Setting Name="Version" Type="System.String" Scope="User">
-      <Value Profile="(Default)">2.16.3.2</Value>
+      <Value Profile="(Default)">2.16.5.1</Value>
     </Setting>
     <Setting Name="Type" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Beta</Value>
+      <Value Profile="(Default)">Pre-release</Value>
     </Setting>
     <Setting Name="Attach" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Preview</Value>
+      <Value Profile="(Default)" />
     </Setting>
   </Settings>
 </SettingsFile>

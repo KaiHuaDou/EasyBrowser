@@ -4,7 +4,7 @@
         WindowState="Normal" Loaded="Window_Loaded" Icon="favicon.ico" Unloaded="Window_Unloaded" Height="500">
     <Window.Resources>
         <ControlTemplate x:Key="FilletTextBox" TargetType="{x:Type TextBox}">
-            <Border BorderBrush="Black" BorderThickness="1" CornerRadius="10">
+            <Border BorderBrush="Gray" BorderThickness="1" CornerRadius="10">
                 <ScrollViewer x:Name="PART_ContentHost" VerticalAlignment="Center" />
             </Border>
         </ControlTemplate>

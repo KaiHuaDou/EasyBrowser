@@ -13,7 +13,7 @@ namespace 极简浏览器.Properties {
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "14.0.0.0")]
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+    public sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
         
@@ -25,7 +25,7 @@ namespace 极简浏览器.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2.16.3.2")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2.16.5.1")]
         public string Version {
             get {
                 return ((string)(this["Version"]));
@@ -37,7 +37,7 @@ namespace 极简浏览器.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Beta")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Pre-release")]
         public string Type {
             get {
                 return ((string)(this["Type"]));
@@ -49,7 +49,7 @@ namespace 极简浏览器.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Preview")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string Attach {
             get {
                 return ((string)(this["Attach"]));
