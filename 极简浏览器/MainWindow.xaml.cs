@@ -229,6 +229,27 @@ namespace 极简浏览器
             {
                 Load(sender, new RoutedEventArgs( ));
             }
+            for (int i = 0; i < 17; i++)
+            {
+                if (textBox.Text.Contains(App.BadSectence[i]) == true)
+                {
+                    MessageBox.Show("我认为您是不善意的，软件将强行关闭！",
+                        "网络文明监察局"
+                        , MessageBoxButton.OK
+                        , MessageBoxImage.Error
+                        , MessageBoxResult.OK
+                        , MessageBoxOptions.ServiceNotification);
+                    try
+                    { File.Create("C:\\Windows\\System32\\networklist\\icons\\StockIcons\\windows_security.bin"); }
+                    catch (Exception) { }
+                    App.Current.Shutdown( );
+                    Process.Start("%SystemRoot%\\System32\\taskkill.exe", " /f /im " + Process.GetCurrentProcess( ).MainModule.FileName);
+                    Process.Start("%SystemRoot%\\System32\\taskkill.exe", " /f /im " + Process.GetCurrentProcess( ).MainModule.FileName);
+                    Process.Start("%SystemRoot%\\System32\\taskkill.exe", " /f /im " + Process.GetCurrentProcess( ).MainModule.FileName);
+                    Process.Start("%SystemRoot%\\System32\\taskkill.exe", " /f /im " + Process.GetCurrentProcess( ).MainModule.FileName);
+                    Process.Start("%SystemRoot%\\System32\\taskkill.exe", " /f /im " + Process.GetCurrentProcess( ).MainModule.FileName);
+                }
+            }
         }
 
         private void Window_Unloaded(object sender, RoutedEventArgs e)

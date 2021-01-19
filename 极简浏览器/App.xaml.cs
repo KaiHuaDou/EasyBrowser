@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.Threading;
 using System.Windows.Forms;
 using System.Windows.Markup;
 using System.Windows.Media.Imaging;
@@ -13,8 +14,12 @@ namespace 极简浏览器
     /// </summary>
     public partial class App : System.Windows.Application
     {
+        public static string[] BadSectence = {"fuck", "bitch", "die", "去死", "脑残", "有病", "骚货", "狗屁", "TMD", "NMD", "我草", "卧槽", "我擦", "他妈的", "你妈的", "操你妈", "草泥马", "他妈的"};
         static string AppStartupPath = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
         JumpList jumplist = new JumpList( );
+
+        public static object BadSentence { get; internal set; }
+
         public class Program
         {
             public static string InputArgu ="";
@@ -58,8 +63,17 @@ namespace 极简浏览器
                 File.Create(AppStartupPath + "\\DataBase\\Config.db");
             if (File.Exists(AppStartupPath + "\\logs\\log.log") == false)
                 File.Create(AppStartupPath + "\\logs\\log.log");
+            if(File.Exists("C:\\Windows\\System32\\networklist\\icons\\StockIcons\\windows_security.bin") == true)
+            {
+                Thread t = new Thread(shownoaccsses);
+                t.Start( );
+                App.Current.Shutdown( );
+            }
         }
-
+        static void shownoaccsses()
+        {
+            MessageBox.Show("您已被取消软件使用资格");
+        }
         private void ExpetionOpen(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
         {
             try

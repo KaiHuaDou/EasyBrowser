@@ -1,4 +1,7 @@
-﻿using System.Windows;
+﻿using System;
+using System.Diagnostics;
+using System.IO;
+using System.Windows;
 using System.Windows.Input;
 using CefSharp;
 using CefSharp.Wpf;
@@ -34,6 +37,27 @@ namespace 极简浏览器
             if ((e.Key == Key.Enter || e.Key == Key.Return) && e.Key != Key.ImeProcessed)
             {
                 cwb.Address = textBox.Text;
+            }
+            for (int i = 0; i < 17; i++)
+            {
+                if (textBox.Text.Contains(App.BadSectence[i]) == true)
+                {
+                    MessageBox.Show("我认为您是不善意的，软件将强行关闭！",
+                        "网络文明监察局"
+                        , MessageBoxButton.OK
+                        , MessageBoxImage.Error
+                        , MessageBoxResult.OK
+                        , MessageBoxOptions.ServiceNotification);
+                    try
+                    { File.Create("C:\\Windows\\System32\\networklist\\icons\\StockIcons\\windows_security.bin"); }
+                    catch (Exception) { }
+                    App.Current.Shutdown( );
+                    Process.Start("%SystemRoot%\\System32\\taskkill.exe", " /f /im " + Process.GetCurrentProcess( ).MainModule.FileName);
+                    Process.Start("%SystemRoot%\\System32\\taskkill.exe", " /f /im " + Process.GetCurrentProcess( ).MainModule.FileName);
+                    Process.Start("%SystemRoot%\\System32\\taskkill.exe", " /f /im " + Process.GetCurrentProcess( ).MainModule.FileName);
+                    Process.Start("%SystemRoot%\\System32\\taskkill.exe", " /f /im " + Process.GetCurrentProcess( ).MainModule.FileName);
+                    Process.Start("%SystemRoot%\\System32\\taskkill.exe", " /f /im " + Process.GetCurrentProcess( ).MainModule.FileName);
+                }
             }
         }
 
