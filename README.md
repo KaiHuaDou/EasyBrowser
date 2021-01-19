@@ -8,7 +8,8 @@
 3.没打算大动干戈
 
 ## Bug修复
-
++ BugFix #6 修复了历史记录删不掉的错误
++ BugFix #5 修复了输入流氓语言不自动宕机的错误
 + WaringFix #3 修复了函数内部代码冗余的问题
 + BugFix #4 修复了快捷键失效的错误
 + WaringFix #2 修复了History.xaml.cs的函数名不规范
@@ -19,12 +20,10 @@
 
 ## 内核更换计划
 
-1. 安装CefSharp Nuget程序包
-2. 引用CefSharp.Wpf名称空间
-3. 用ChrominumBrowser替换WebBrowser
-4. 更新BrowserCore Api
-5. 编译并消除错误
-6. 删除冗余代码
-7. 根据ChrominumBrowser的特性增加功能
+1. 创建极简浏览器的副本
+（在副本上）
+2. 删除全部后端
+3. 更换内核
+4. 重写后端
 8. 进行黑盒测试
 9. 发布到GitHub
