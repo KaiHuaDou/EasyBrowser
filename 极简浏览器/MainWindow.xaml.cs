@@ -183,7 +183,7 @@ namespace 极简浏览器
             label1.Content = "正在加载中...";
             LoadProgressBar.Visibility = Visibility.Visible;
             Storyboard story = new Storyboard( );
-            DoubleAnimation da = new DoubleAnimation(0, 90, new Duration(TimeSpan.FromSeconds(10)));
+            DoubleAnimation da = new DoubleAnimation(0, 95, new Duration(TimeSpan.FromSeconds(10)));
             Storyboard.SetTarget(da, LoadProgressBar);
             Storyboard.SetTargetProperty(da, new PropertyPath("Value"));
             story.Children.Add(da);

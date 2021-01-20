@@ -93,6 +93,7 @@ namespace 极简浏览器
         private void RefreshButton_Click(object sender, RoutedEventArgs e)
         {
             BrowserCore.Refresh( );
+            LoadProgressBar.Visibility = Visibility.Collapsed;
         }
         private void AddNewPageButton_Click(object sender, RoutedEventArgs e)
         {
