@@ -112,5 +112,21 @@ namespace 极简浏览器
             }
             listBox1.ItemsSource = lc;
         }
+
+        private void History_SelectAll_Button_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (CheckBox cb in listBox.Items)
+            {
+                cb.IsChecked = !cb.IsChecked;
+            }
+        }
+
+        private void BookMark_SelectAll_Button_Click(object sender, RoutedEventArgs e)
+        {
+            foreach(CheckBox cb in listBox1.Items)
+            {
+                cb.IsChecked = true;
+            }
+        }
     }
 }

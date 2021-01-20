@@ -7,10 +7,13 @@
         <TabControl x:Name="tabControl" Margin="0,0,0,0">
             <TabItem Header="历史记录">
                 <Grid>
-                    <ListBox x:Name="listBox" Margin="0,0,0,40">
+                    <ListBox x:Name="listBox" Margin="0,0,0,40" BorderThickness="0">
                     </ListBox>
                     <Button x:Name="button" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="30"
                             Width="167" Content="在新标签页打开(_O)" Click="button_Click" Margin="10,0,0,5" />
+                    <Button x:Name="History_SelectAll_Button" HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                            Height="30" Width="97" Content="全选(_A)" Click="History_SelectAll_Button_Click"
+                            Margin="287,0,0,5" />
                     <Button x:Name="button1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="30"
                             Width="99" Content="清空(_C)" Click="HistoryClear" Margin="0,0,10,5" />
                     <Button x:Name="button2" Content="删除(_D)" HorizontalAlignment="Left" Margin="182,0,0,5"
@@ -19,9 +22,12 @@
             </TabItem>
             <TabItem Header="书签">
                 <Grid>
-                    <ListBox x:Name="listBox1" Margin="0,0,0,40" />
+                    <ListBox x:Name="listBox1" Margin="0,0,0,40" BorderThickness="0" />
                     <Button x:Name="button_b" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="30"
                             Width="167" Content="在新标签页打开(_O)" Click="button_Click1" Margin="10,0,0,5" />
+                    <Button x:Name="BookMark_SelectAll_Button" HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                            Height="30" Width="99" Content="全选(_A)" Click="BookMark_SelectAll_Button_Click"
+                            Margin="287,0,0,5" />
                     <Button x:Name="button1_b" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="30"
                             Width="99" Content="清空(_C)" Click="button1_Click1" Margin="0,0,10,5" />
                     <Button x:Name="button2_b" Content="删除(_D)" HorizontalAlignment="Left" Margin="182,0,0,5"
