@@ -125,7 +125,7 @@ namespace 极简浏览器
         {
             foreach(CheckBox cb in listBox1.Items)
             {
-                cb.IsChecked = true;
+                cb.IsChecked = !cb.IsChecked;
             }
         }
     }
