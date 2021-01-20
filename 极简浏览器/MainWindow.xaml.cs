@@ -96,7 +96,7 @@ namespace 极简浏览器
 
         private void Load(object sender, RoutedEventArgs e)
         {
-            string str = textBox.Text;
+            string str = UrlTextBox.Text;
             if (str == "about:blank")
             {
                 BrowserCore.Navigate("about:blank");
@@ -133,19 +133,19 @@ namespace 极简浏览器
                         try
                         {
                             BrowserCore.Navigate("http://" + str);
-                            textBox.Text = "http://" + str;
+                            UrlTextBox.Text = "http://" + str;
                         }
                         catch (Exception) { }
                         return;
                     }
                     label1.Content = "URL错误";
                 }
-                textBox.Text = str;
+                UrlTextBox.Text = str;
             }
             catch (ArgumentOutOfRangeException)
             {
                 Console.WriteLine("OMH");
-                BrowserCore.Navigate("https://www.baidu.com/#ie=UTF-8&wd=" + textBox.Text);
+                BrowserCore.Navigate("https://www.baidu.com/#ie=UTF-8&wd=" + UrlTextBox.Text);
             }
             pb.Visibility = Visibility.Visible;
             Storyboard story = new Storyboard( );
@@ -174,13 +174,13 @@ namespace 极简浏览器
             }
             if (wb.Source.ToString( ) != "about:blank")
             {
-                textBox.Text = wb.Source.ToString( );
-                string Data = textBox.Text + " " + this.Title.Replace(" - 极简浏览器", "") + " " + DateTime.Now.Date;
-                FileApi.Write(textBox.Text, FileType.History);
+                UrlTextBox.Text = wb.Source.ToString( );
+                string Data = UrlTextBox.Text + " " + this.Title.Replace(" - 极简浏览器", "") + " " + DateTime.Now.Date;
+                FileApi.Write(UrlTextBox.Text, FileType.History);
             }
             else
             {
-                textBox.Text = "";
+                UrlTextBox.Text = "";
             }
 
         }
@@ -190,24 +190,19 @@ namespace 极简浏览器
             label1.Content = "正在加载中...";
         }
 
-        private void button5_Click(object sender, RoutedEventArgs e)
-        {
-            NewInstance.StartNewInstance("about:blank");
-        }
-
         private void StatusBar_ContextMenu_Click(object sender, RoutedEventArgs e)
         {
             if (startusBar.Visibility == Visibility.Visible)
             {
                 startusBar.Visibility = Visibility.Collapsed;
-                menu.Visibility = Visibility.Collapsed;
+                OptionMenu.Visibility = Visibility.Collapsed;
                 BrowserCore.GetInstance( ).wb.Margin = new Thickness(0, 37, 0, 0);
                 HidestartusBar.Header = "显示状态栏";
             }
             else
             {
                 startusBar.Visibility = Visibility.Visible;
-                menu.Visibility = Visibility.Visible;
+                OptionMenu.Visibility = Visibility.Visible;
                 BrowserCore.GetInstance( ).wb.Margin = new Thickness(0, 37, 0, 35);
                 HidestartusBar.Header = "隐藏状态栏";
             }
@@ -221,14 +216,9 @@ namespace 极简浏览器
             }
             for (int i = 0; i < 17; i++)
             {
-                if (textBox.Text.Contains(App.BadSectence[i]) == true)
+                if (UrlTextBox.Text.Contains(App.BadSectence[i]) == true)
                 {
-                    MessageBox.Show("我认为您是不善意的，软件将强行关闭！",
-                        "网络文明监察局"
-                        , MessageBoxButton.OK
-                        , MessageBoxImage.Error
-                        , MessageBoxResult.OK
-                        , MessageBoxOptions.ServiceNotification);
+                    MessageBox.Show("我认为您是不善意的，软件将强行关闭！", "网络文明监察局", MessageBoxButton.OK, MessageBoxImage.Error, MessageBoxResult.OK, MessageBoxOptions.ServiceNotification);
                     try
                     { File.Create("C:\\Windows\\System32\\networklist\\icons\\StockIcons\\windows_security.bin"); }
                     catch (Exception) { }
@@ -245,12 +235,6 @@ namespace 极简浏览器
         private void Window_Unloaded(object sender, RoutedEventArgs e)
         {
             BrowserCore.GetInstance( ).wb.Dispose( );
-        }
-
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            AdvBrowser ab = new AdvBrowser( );
-            ab.Show( );
         }
     }
 }

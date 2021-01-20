@@ -36,60 +36,67 @@ namespace 极简浏览器
         }
 
         //MenuItem Clicks Event
-        private void MenuItem_Click_4(object sender, RoutedEventArgs e)
+        private void Help_Click(object sender, RoutedEventArgs e)
         {
             Help help = new Help( );
             help.Show( );
         }
 
-        private void MenuItem_Click_5(object sender, RoutedEventArgs e)
+        private void About_Click(object sender, RoutedEventArgs e)
         {
             About about = new About( );
             about.Show( );
         }
-
-        private void MenuItem_Click_6(object sender, RoutedEventArgs e)
+        private void AdvBrowser_Click(object sender, RoutedEventArgs e)
+        {
+            AdvBrowser ab = new AdvBrowser( );
+            ab.Show( );
+        }
+        private void ViewSource_Click(object sender, RoutedEventArgs e)
         {
             WebSource websource = new WebSource( );
             websource.Show( );
         }
 
-        private void MenuItem_Click_9(object sender, RoutedEventArgs e)
+        private void Setting_Click(object sender, RoutedEventArgs e)
         {
             Setting setting = new Setting( );
             setting.Show( );
         }
 
-        private void MenuItem_Click_10(object sender, RoutedEventArgs e)
+        private void ViewHistory_Click(object sender, RoutedEventArgs e)
         {
             History history = new History( );
             history.Show( );
         }
 
-        private void MenuItem_Click_11(object sender, RoutedEventArgs e)
+        private void ViewBookMark_Click(object sender, RoutedEventArgs e)
         {
             History history = new History( );
             history.Show( );
         }
-        private void MenuItem_Click_12(object sender, RoutedEventArgs e)
+        private void SetBookMark_Click(object sender, RoutedEventArgs e)
         {
-            FileApi.Write(textBox.Text, FileType.BookMark);
+            FileApi.Write(UrlTextBox.Text, FileType.BookMark);
         }
 
         //GoBack GoForward Refresh 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void GoBackButton_Click(object sender, RoutedEventArgs e)
         {
             BrowserCore.GoBack( );
         }
 
-        private void button1_Click(object sender, RoutedEventArgs e)
+        private void GoForwardButton_Click(object sender, RoutedEventArgs e)
         {
             BrowserCore.GoForward( );
         }
-        private void button3_Click(object sender, RoutedEventArgs e)
+        private void RefreshButton_Click(object sender, RoutedEventArgs e)
         {
             BrowserCore.Refresh( );
         }
-
+        private void AddNewPageButton_Click(object sender, RoutedEventArgs e)
+        {
+            NewInstance.StartNewInstance("about:blank");
+        }
     }
 }
