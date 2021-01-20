@@ -147,20 +147,13 @@ namespace 极简浏览器
                 Console.WriteLine("OMH");
                 BrowserCore.Navigate("https://www.baidu.com/#ie=UTF-8&wd=" + UrlTextBox.Text);
             }
-            pb.Visibility = Visibility.Visible;
-            Storyboard story = new Storyboard( );
-            DoubleAnimation da = new DoubleAnimation(0, 100, new Duration(TimeSpan.FromSeconds(10)));
-            Storyboard.SetTarget(da, pb);
-            Storyboard.SetTargetProperty(da, new PropertyPath("Value"));
-            story.Children.Add(da);
-            story.Begin( );
         }
 
 
         private void Check(object sender, NavigationEventArgs e)
         {
-            pb.Value = 100;
-            pb.Visibility = Visibility.Collapsed;
+            LoadProgressBar.Value = 100;
+            LoadProgressBar.Visibility = Visibility.Collapsed;
             label1.Content = "加载完成";
             document = wb.Document;
             string title = ((HTMLDocument) document).title;
@@ -188,6 +181,13 @@ namespace 极简浏览器
         private void Running(object sender, NavigatingCancelEventArgs e)
         {
             label1.Content = "正在加载中...";
+            LoadProgressBar.Visibility = Visibility.Visible;
+            Storyboard story = new Storyboard( );
+            DoubleAnimation da = new DoubleAnimation(0, 100, new Duration(TimeSpan.FromSeconds(10)));
+            Storyboard.SetTarget(da, LoadProgressBar);
+            Storyboard.SetTargetProperty(da, new PropertyPath("Value"));
+            story.Children.Add(da);
+            story.Begin( );
         }
 
         private void StatusBar_ContextMenu_Click(object sender, RoutedEventArgs e)
