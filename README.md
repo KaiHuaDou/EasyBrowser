@@ -1,6 +1,14 @@
 # 极简浏览器
 极简浏览器是基于IE的浏览器
 
+## 注意！
+
+自2021年2月1日起，本仓库将停止支持
+
+如果您使用的是Windows 7以上版本，您可以移步https://github.com/KaiHuaDou/EasyBrowserAdvanced查看最新版本
+
+如果您使用的是Windows Vista及以下版本，您无法使用最新发布。
+
 ## 适用用途
 
 1.剩余性能不足
